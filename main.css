@@ -1,0 +1,90 @@
+body {
+    background-image: url("wall.jpg");
+    background-size: cover;
+    text-align: center;
+    padding-top: 110px;
+    font-family: Arial;
+}
+.avatar {
+    border-radius: 50%;
+    width: 150px !important;
+}
+.first {
+    width: 300px;
+    height: 60px;
+    border-radius: 4px;
+    background-color: #9466ff;
+    margin: auto;
+    transition: ease all 0.5s;
+}
+.first:hover {
+    background-color: #8557f1;
+}
+.second:hover {
+    background-color: #8557f1;
+}
+.three:hover {
+    background-color: #8557f1;
+}
+.four:hover {
+    background-color: #8557f1;
+}
+.five:hover {
+    background-color: #8557f1;
+}
+.second {
+    width: 300px;
+    height: 60px;
+    border-radius: 4px;
+    background-color: #9b73f8;
+    margin: auto;
+    transition: ease all 0.5s;
+}
+.three {
+    width: 300px;
+    height: 60px;
+    border-radius: 4px;
+    background-color: #9466ff;
+    margin: auto;
+    transition: ease all 0.5s;
+}
+.four {
+    width: 300px;
+    height: 60px;
+    border-radius: 4px;
+    background-color: #9466ff;
+    margin: auto;
+    transition: ease all 0.5s;
+}
+.five {
+    width: 300px;
+    height: 60px;
+    border-radius: 4px;
+    background-color: #9466ff;
+    margin: auto;
+    transition: ease all 0.5s;
+}
+.skills {
+    width: 300px;
+    height: 300px;
+    border-radius: 7px;
+    background-color: black;
+    margin: auto;
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+.eee {
+    position: absolute;
+    top: 697px;
+    right: 905px;
+    font-weight: bold;
+}
+.pre-img {
+    width: 20px !important;
+}
+.png_img {
+    width: 200px;
+}
