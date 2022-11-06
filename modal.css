@@ -1,0 +1,23 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    overflow: auto;
+}
+.modal_content {
+margin: 450px auto;
+background-color: #fff;
+padding: 50px;
+width: 12%;
+z-index: 99999;
+}
+.close_modal {
+color: #000;
+float: right;
+font-size: 30px;
+cursor: pointer;
+}
