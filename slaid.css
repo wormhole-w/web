@@ -11,7 +11,9 @@ img {
     background-color: transparent;
 }
   
-
+.sim-slider>img {
+    width: 200px !important;
+}
 .sim-slider {
     position: relative;
 }
