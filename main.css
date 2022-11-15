@@ -8,6 +8,7 @@ body {
 .avatar {
     border-radius: 50%;
     width: 150px !important;
+    text-align: center;
 }
 .first {
     width: 300px;
@@ -33,6 +34,9 @@ body {
     background-color: #8557f1;
 }
 .six:hover {
+    background-color: #8557f1;
+}
+.seven:hover {
     background-color: #8557f1;
 }
 .second {
@@ -68,6 +72,14 @@ body {
     transition: ease all 0.5s;
 }
 .six {
+    width: 300px;
+    height: 60px;
+    border-radius: 4px;
+    background-color: #9466ff;
+    margin: auto;
+    transition: ease all 0.5s;
+}
+.seven {
     width: 300px;
     height: 60px;
     border-radius: 4px;
