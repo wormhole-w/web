@@ -39,6 +39,9 @@ body {
 .seven:hover {
     background-color: #8557f1;
 }
+.eight:hover {
+    background-color: #8557f1;
+}
 .second {
     width: 300px;
     height: 60px;
@@ -80,6 +83,14 @@ body {
     transition: ease all 0.5s;
 }
 .seven {
+    width: 300px;
+    height: 60px;
+    border-radius: 4px;
+    background-color: #9466ff;
+    margin: auto;
+    transition: ease all 0.5s;
+}
+.eight {
     width: 300px;
     height: 60px;
     border-radius: 4px;
