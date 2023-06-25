@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PnL Калькулятор</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>PnL Калькулятор</h1>
+  <div>
+    <label for="asset">Валюта:</label>
+    <select id="asset">
+      <option value="btc">BTC</option>
+      <option value="eth">ETH</option>
+      <option value="xrp">XRP</option>
+      <option value="bnb">BNB</option>
+      <option value="ada">ADA</option>
+      <option value="matic">MATIC</option>
+      <option value="sol">SOL</option>
+      <option value="avax">AVAX</option>
+    </select>
+  </div>
+  <br>
+  <div>
+    <label for="position">Позиция:</label>
+    <select id="position">
+      <option value="long">Длинная позиция</option>
+      <option value="short">Короткая позиция</option>
+    </select>
+  </div>
+  <br>
+  <div>
+    <label for="entry-price">Входная цена:</label>
+    <input type="text" id="entry-price">
+  </div>
+  <br>
+  <div>
+    <label for="exit-price">Выходная цена:</label>
+    <input type="text" id="exit-price">
+  </div>
+  <br>
+  <div>
+    <label for="quantity">Маржа (долл. США):</label>
+    <input type="text" id="quantity">
+  </div>
+  <br>
+  <div>
+    <label for="leverage">Кредитное Плечо:</label>
+    <input type="range" id="leverage-slider" min="1" max="200" step="1" value="1" oninput="updateLeverageInput()">
+    <input type="number" id="leverage-input" min="1" max="200" step="1" value="1" oninput="updateLeverageSlider()">
+    <br>
+    <br>
+    <!-- <input type="text" id="leverage-result" placeholder="Total volume" readonly> -->
+  </div>
+  <br>
+  <button onclick="calculatePL()">Рассчитать PnL</button>
+  <br>
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
