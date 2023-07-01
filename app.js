@@ -1,6 +1,6 @@
-let eee = document.getElementById("da");
+let gif = document.getElementById("gif");
 
 
-eee.onclick = function () {
-    scrollTo(0, 900);
+gif.onclick = function () {
+    scrollTo(0, 1100);
 }

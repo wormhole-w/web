@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-image: url("wall.jpg");
     background-size: cover;
@@ -99,8 +102,8 @@ body {
     transition: ease all 0.5s;
 }
 .skills {
-    width: 300px;
-    height: 290px;
+    width: 900px;
+    height: 900px;
     border-radius: 7px;
     background-color: black;
     margin: auto;
@@ -139,4 +142,9 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: rgb(133, 124, 212);
   outline: 1px solid rgb(95, 86, 170);
+}
+.gif {
+    width: 150px !important;
+    height: 150px !important;
+    height: auto;
 }
