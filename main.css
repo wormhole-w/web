@@ -5,7 +5,7 @@ body {
     background-image: url("wall.jpg");
     background-size: cover;
     text-align: center;
-    padding-top: 110px;
+    /* padding-top: 110px; */
     font-family: Arial;
 }
 .avatar {
@@ -148,3 +148,6 @@ body::-webkit-scrollbar-thumb {
     height: 150px !important;
     height: auto;
 }
+.color-text {
+    color: white;
+  }
