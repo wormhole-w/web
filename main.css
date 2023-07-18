@@ -4,8 +4,8 @@ html {
 body {
     background-image: url("wall.jpg");
     background-size: cover;
-    background-color: black;
     text-align: center;
+    /* padding-top: 110px; */
     font-family: Arial;
 }
 .avatar {
@@ -150,4 +150,23 @@ body::-webkit-scrollbar-thumb {
 }
 .color-text {
     color: white;
+}
+
+#hide {
+    width: 100px;
+    height: 100%;
+    background-color: white;
+}
+
+
+.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease;
+  }
+  .visible {
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.3s ease, height 0.3s ease;
   }
