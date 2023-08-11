@@ -1,20 +1,33 @@
-function updateTimer() {
-    var currentTime = new Date();
-    var openingTimeET = new Date(currentTime);
-    openingTimeET.setHours(16, 30, 0);
-    var closingTimeET = new Date(currentTime);
-    closingTimeET.setHours(23, 0, 0);
-    
-    var timeLeft = openingTimeET - currentTime;
-    if (currentTime >= openingTimeET && currentTime < closingTimeET) {
-        timeLeft = closingTimeET - currentTime;
-    }
-    
-    var hours = Math.floor(timeLeft / 3600000);
-    var minutes = Math.floor((timeLeft % 3600000) / 60000);
-    var seconds = Math.floor((timeLeft % 60000) / 1000);
+        function updateTimer() {
+            var currentTime = moment();
+            var openingTimeET = moment().set({hour: 9, minute: 30, second: 0}); 
+            var closingTimeET = moment().set({hour: 16, minute: 0, second: 0}); 
+            
+            var nextOpeningDay = currentTime.day() === 6 ? 2 : 1;
+            openingTimeET.add(nextOpeningDay, 'days');
+            closingTimeET.add(nextOpeningDay, 'days');
+            
+            var timeLeft = openingTimeET - currentTime;
+            if (currentTime >= openingTimeET && currentTime < closingTimeET) {
+                timeLeft = closingTimeET - currentTime;
+            }
+            
+            var duration = moment.duration(timeLeft);
+            
+            var timerMessage = "";
 
-    document.getElementById("timer").innerHTML = "До " + (currentTime < openingTimeET ? "открытия" : "закрытия") + " NYSE & NASDAQ осталось: " + hours + " часов " + minutes + " минут " + seconds + " секунд";
-}
+            if (currentTime.day() === 0 || (currentTime.day() === 6 && currentTime.hour() >= 0 && currentTime.minute() === 0)) {
+                timerMessage = "Рынки закрыты. Прекрасное время сделать перерыв!";
+            } else {
+                timerMessage = "До " + (currentTime < openingTimeET ? "открытия" : "закрытия") + " рынков осталось: " + duration.hours() + " часов " + duration.minutes() + " минут " + duration.seconds() + " секунд";
+                
+                if (currentTime >= openingTimeET && currentTime < closingTimeET) {
+                    var audio = new Audio("nyse.mp3");
+                    audio.play();
+                }
+            }
 
-setInterval(updateTimer, 1000);
+            document.getElementById("timer").innerHTML = timerMessage;
+        }
+
+        setInterval(updateTimer, 1000);
