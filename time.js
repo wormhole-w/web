@@ -25,7 +25,7 @@ function updateClock() {
     const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     let nytime = padZero(nyh) + ":" + padZero(nym) + ":" + padZero(nys);
   
-    document.getElementById('clock').textContent = `Настоящее время: ${formattedTime}`;
+    document.getElementById('clock').textContent = `Время UTC+3: ${formattedTime}`;
     document.getElementById('clock-1').textContent = `NY: ${nytime}`;
 
   }
