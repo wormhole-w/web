@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор размера позиции</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        .calculator {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h2, p {
+            text-align: center;
+            font-weight: bold;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>EUR/USD Position Size Calculator</h2>
+        <p>by <a href="https://www.instagram.com/arnolds_timofei4ik/" target="_blank">@arnolds_timofei4ik</a></p>
+        <label for="accountSize">Account balance ($):</label>
+        <input type="text" id="accountSize">
+        <label for="riskPercentage">Risk (%):</label>
+        <input type="text" id="riskPercentage">
+        <label for="stopLossPips">Stop-loss (pips):</label>
+        <input type="text" id="stopLossPips">
+        <button id="calculateButton">Calculate</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const calculateButton = document.getElementById("calculateButton");
+            const accountSizeInput = document.getElementById("accountSize");
+            const riskPercentageInput = document.getElementById("riskPercentage");
+            const stopLossPipsInput = document.getElementById("stopLossPips");
+            const resultOutput = document.getElementById("result");
+
+            calculateButton.addEventListener("click", function () {
+                const accountSize = parseFloat(accountSizeInput.value);
+                const riskPercentage = parseFloat(riskPercentageInput.value);
+                const stopLossPips = parseFloat(stopLossPipsInput.value);
+
+                if (!isNaN(accountSize) && !isNaN(riskPercentage) && !isNaN(stopLossPips)) {
+                    const positionSize = (accountSize * riskPercentage) / (stopLossPips * 100);
+                    resultOutput.textContent = `Размер позиции: ${(positionSize / 10).toFixed(2)} лотов`;
+                } else {
+                    resultOutput.textContent = "Пожалуйста, введите корректные данные.";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
