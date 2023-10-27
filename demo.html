@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test demo account | arnolds_timofei4ik</title>
+
+    <!-- change mode -->
+    <script>
+        function changeCurrency() {
+            var currencySelect = document.getElementById("currency");
+            var balanceSelect = document.getElementById("balance");
+
+            var selectedCurrency = currencySelect.value;
+
+            var options = balanceSelect.getElementsByTagName("option");
+
+            for (var i = 0; i < options.length; i++) {
+                var option = options[i];
+                var text = option.textContent;
+
+                if (selectedCurrency === "eur") {
+                    if (text.includes("$")) {
+                        option.textContent = text.replace("$", "€");
+                    }
+                } else {
+                    if (text.includes("€")) {
+                        option.textContent = text.replace("€", "$");
+                    }
+                }
+            }
+        }
+
+        function changeRisk() {
+            var riskSelect = document.getElementById("risky");
+            var leverageSelect = document.getElementById("leverage");
+            var selectedRisk = riskSelect.value;
+
+            // Включить все опции плеча
+            for (var i = 0; i < leverageSelect.options.length; i++) {
+                leverageSelect.options[i].disabled = false;
+            }
+
+            // Ограничения в зависимости от выбранного риска
+            if (selectedRisk === "normal") {
+                // Если выбран "Normal", оставить все опции доступными
+            } else if (selectedRisk === "aggressive") {
+                // Если выбран "Aggressive", отключить опцию "1:50" и "1:100"
+                for (var i = 0; i < leverageSelect.options.length; i++) {
+                    if (leverageSelect.options[i].value === "swing-lev" || leverageSelect.options[i].value === "default-lev") {
+                        leverageSelect.options[i].disabled = true;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Test our demo account</h1>
+    <form action="">
+        <p>Currency:</p>
+        <select name="currency" id="currency" onchange="changeCurrency()">
+            <option value="usd">USD</option>
+            <option value="eur">EURO</option>
+        </select>
+        <p>Risk mode:</p>
+        <select name="risky" id="risky">
+            <option value="normal">Normal</option>
+            <option value="aggressive">Aggressive</option>
+        </select>
+        <p>Account Balance:</p>
+        <select name="balance" id="balance">
+            <option value="one">1000$</option>
+            <option value="two">5000$</option>
+            <option value="three">6000$</option>
+            <option value="four">10000$</option>
+            <option value="five">25000$</option>
+            <option value="six">50000$</option>
+        </select>
+        <p>Trading Leverage:</p>
+        <select name="leverage" id="leverage">
+            <option value="default-lev">1:100</option>
+            <option value="aggressive-lev">1:500</option>
+            <option value="swing-lev">1:50</option>
+        </select>
+        <br>
+        <br>
+        <button type="button">Submit</button>
+    </form>
+</body>
+</html>
