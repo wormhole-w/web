@@ -52,10 +52,8 @@ button {
     border: none;
 }
   
-.result {
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
+.left-banner {
+    position: absolute;
+    left: 5px;
+    top: 100px;
 }
-  

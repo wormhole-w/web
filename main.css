@@ -190,8 +190,8 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
 }
 
-/* .left-panel, .right-panel {
-    top: 150px;
+.left-panel, .right-panel {
+    top: 100px;
     width: 100px;
 
     color: white;
@@ -210,4 +210,92 @@ body::-webkit-scrollbar-thumb {
 
 .right-panel {
     right: 100px;
+}
+
+
+/* left */
+@media screen and (max-width: 500px) {
+    .left-panel {
+        position: absolute;
+        top: 900px !important;
+        left: -30px;
+        height: 30px;
+        width: 30px;
+    }
+    img {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .left-panel {
+        position: absolute;
+        top: 350px;
+        left: -50px;
+        height: 30px;
+        width: 50px;
+    }
+    img {
+        width: 500px;
+    }
+}
+
+/* right */
+/* @media screen and (max-width: 500px) {
+    .right-panel {
+        position: absolute;
+        left: -100px;
+        top: 850px;
+        left: 50px;
+        height: 30px;
+        width: 30px;
+    }
+    img {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .right-panel {
+        position: absolute;
+        top: 350px;
+        left: 800px;
+        height: 30px;
+        width: 50px;
+    }
+    img {
+        width: 350px;
+    }
 } */
+
+/* modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    overflow: auto;
+}
+.modal_content {
+    margin: 350px auto;
+    background-color: #fff;
+    padding: 40px;
+    width: 10%;
+    z-index: 99999;
+}
+.close_modal {
+    color: #000;
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+}
+input[type=checkbox] {
+    margin: 10px 0;
+    padding: 10px;
+    border: unset;
+    border-bottom: 2px solid #e3e3e3;
+    outline: none;
+}

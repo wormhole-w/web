@@ -24,43 +24,43 @@
 //         isVisible = true;
 //     }
 // });
-const overlay = document.getElementById('overlay');
-let nightClck = document.querySelector('img.night');
-let sunClck = document.querySelector('img.sun');
-sunClck.style.visibility = 'hidden';
-nightClck.style.visibility = 'visible';
+// const overlay = document.getElementById('overlay');
+// let nightClck = document.querySelector('img.night');
+// let sunClck = document.querySelector('img.sun');
+// sunClck.style.visibility = 'hidden';
+// nightClck.style.visibility = 'visible';
 
-function showOverlay() {
-  overlay.style.display = 'block';
-}
+// function showOverlay() {
+//   overlay.style.display = 'block';
+// }
 
-function hideOverlay() {
-  overlay.style.display = 'none';
-}
+// function hideOverlay() {
+//   overlay.style.display = 'none';
+// }
 
-nightClck.addEventListener("click", function () {
-    overlay.style.display = 'block';
-    sunClck.style.visibility = 'visible';
-    nightClck.style.visibility = 'hidden';
-    sunClck.style.zIndex = '1';
+// nightClck.addEventListener("click", function () {
+//     overlay.style.display = 'block';
+//     sunClck.style.visibility = 'visible';
+//     nightClck.style.visibility = 'hidden';
+//     sunClck.style.zIndex = '1';
     
-    // nightClck.src = 'sun.png';
-    // nightClck.alt = 'Sun';
-})
+//     nightClck.src = 'sun.png';
+//     nightClck.alt = 'Sun';
+// })
 
-sunClck.addEventListener("click", function () {
-    overlay.style.display = 'none';
-    sunClck.style.visibility = 'hidden';
+// sunClck.addEventListener("click", function () {
+//     overlay.style.display = 'none';
+//     sunClck.style.visibility = 'hidden';
     
-    nightClck.style.visibility = 'visible';
+//     nightClck.style.visibility = 'visible';
 
-    // sunClck.src = 'night.png';
-    // sunClck.alt = 'Night';
-})
+//     sunClck.src = 'night.png';
+//     sunClck.alt = 'Night';
+// })
 
 //backtest
 let textElement = document.getElementById('backtest');
-let textArray = ['Arnolds_timofei4ik', 'bruh'];
+let textArray = ['Bruh', 'Bro, ur slow', 'Bruh what the hell bruh', 'Vanco Vanco', 'Arnolds Timofei4ik'];
 let currentIndex = 0;
 
 function changeText() {
@@ -68,4 +68,24 @@ function changeText() {
   currentIndex = (currentIndex + 1) % textArray.length;
 }
 
-setInterval(changeText, 5000);
+setInterval(changeText, 1000);
+
+
+//modal-fa
+var modal = document.getElementById("mymodal");
+var btn = document.getElementById("btn_modal_window");
+var close = document.getElementsByClassName("close_modal")[0];
+
+btn.onclick = function () {
+  modal.style.display = "block";
+}
+
+close.onclick = function () {
+  modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+  if(event.target == modal) {
+    modal.style.display = "none";
+  }
+}
