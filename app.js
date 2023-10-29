@@ -57,3 +57,15 @@ sunClck.addEventListener("click", function () {
     // sunClck.src = 'night.png';
     // sunClck.alt = 'Night';
 })
+
+//backtest
+let textElement = document.getElementById('backtest');
+let textArray = ['Arnolds_timofei4ik', 'bruh'];
+let currentIndex = 0;
+
+function changeText() {
+  textElement.textContent = textArray[currentIndex];
+  currentIndex = (currentIndex + 1) % textArray.length;
+}
+
+setInterval(changeText, 5000);
